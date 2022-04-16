@@ -72,8 +72,8 @@
             <div class="col-sm-6">
                 <select wire:model="fruit" class="form-select">
                     <option>Select Fruit</option>
-                    <option value="Apple">Apple</option>
-                    <option value="Banana">Banana</option>
+                    <option>Apple</option>
+                    <option>Banana</option>
                 </select>
                 @if($fruit)
                     <div class="mt-2 bg-light p-2 rounded small">
