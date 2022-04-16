@@ -8,13 +8,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/">SSLC</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        CRUD
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Users</a></li>
-                    </ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('users.index') }}">Users</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="https://laravel-livewire.com/docs/2.x/quickstart" target="_blank" tabindex="-1">Livewire Docs</a>
