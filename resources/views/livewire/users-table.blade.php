@@ -14,7 +14,7 @@
                    placeholder="Search users...">
         </div>
         <div class="col-sm-4">
-            <a href="" class="btn btn-primary"><i class="fa fa-plus"></i> Create New</a>
+            <a href="{{ route('users.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Create New</a>
         </div>
     </div>
     <div class="table-responsive">
@@ -33,7 +33,7 @@
                     @endif
                 </th>
                 <th style="width: 10%;">Gender</th>
-                <th style="width: 20%;">Cars</th>
+                <th style="width: 20%;">Favorite Cars</th>
                 <th wire:click="sortBy('created_at')" style="width: 20%;cursor: pointer;">
                     Created At
                     @if ($sort !== 'created_at')
