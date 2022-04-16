@@ -15,7 +15,7 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container pb-5">
     <div class="m-4">
         <h3>Laravel Livewire</h3>
         @include('navbar')
