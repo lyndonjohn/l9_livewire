@@ -14,7 +14,7 @@
                    placeholder="Search users...">
         </div>
         <div class="col-sm-4">
-            <a href="" class="btn btn-primary">Create New</a>
+            <a href="" class="btn btn-primary"><i class="fa fa-plus"></i> Create New</a>
         </div>
     </div>
     <div class="table-responsive">
@@ -22,11 +22,29 @@
             <thead>
             <tr>
                 <th style="width: 5%;">#</th>
-                <th style="width: available;">Name</th>
+                <th wire:click="sortBy('name')" style="width: available;cursor: pointer;">
+                    Name
+                    @if ($sort !== 'name')
+                        <i class="fa fa-sort fa-fw text-primary cursor-pointer"></i>
+                    @elseif ($asc)
+                        <i class="fa fa-sort-up fa-fw text-primary"></i>
+                    @else
+                        <i class="fa fa-sort-down fa-fw text-primary"></i>
+                    @endif
+                </th>
                 <th style="width: 10%;">Gender</th>
                 <th style="width: 20%;">Cars</th>
-                <th style="width: 20%;">Created At</th>
-                <th style="width: 10%;"></th>
+                <th wire:click="sortBy('created_at')" style="width: 20%;cursor: pointer;">
+                    Created At
+                    @if ($sort !== 'created_at')
+                        <i class="fa fa-sort fa-fw text-primary cursor-pointer"></i>
+                    @elseif ($asc)
+                        <i class="fa fa-sort-up fa-fw text-primary"></i>
+                    @else
+                        <i class="fa fa-sort-down fa-fw text-primary"></i>
+                    @endif
+                </th>
+                <th style="width: 15%;"></th>
             </tr>
             </thead>
             <tbody>
@@ -41,8 +59,12 @@
                     <td>{{ implode(', ', json_decode($user->cars)) }}</td>
                     <td>{{ $user->created_at->diffForHumans() }}</td>
                     <td>
-                        <button type="button" class="btn btn-sm btn-primary">Edit</button>
-                        <button type="button" class="btn btn-sm btn-danger">Delete</button>
+                        <button type="button" class="btn btn-sm btn-primary">
+                            <i class="fa fa-fw fa-edit"></i> Edit
+                        </button>
+                        <button type="button" class="btn btn-sm btn-danger">
+                            <i class="fa fa-fw fa-trash-alt"></i> Delete
+                        </button>
                     </td>
                 </tr>
             @empty

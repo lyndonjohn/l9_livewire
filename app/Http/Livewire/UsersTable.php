@@ -42,4 +42,15 @@ class UsersTable extends Component
     {
         $this->resetPage();
     }
+
+    public function sortBy($field)
+    {
+        if ($this->sort === $field) {
+            $this->asc = !$this->asc;
+        } else {
+            $this->asc = true;
+        }
+
+        $this->sort = $field;
+    }
 }
