@@ -37,4 +37,9 @@ class UsersTable extends Component
                 })->paginate($this->perPage)
         ]);
     }
+
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
 }
